@@ -10,14 +10,20 @@ public class DeckTest extends TestCase {
         super.setUp();
     }
 
+
     public void tearDown() throws Exception {
         deck = null;
         super.tearDown();
     }
 
+    public void testGetCards(){
+        assertNotNull(deck.getCards());
+    }
+
+
     public void testSort() throws Exception {
         deck.sort();
-        assertTrue(deck.getFirst().compareTo(new Card(Color.CLUBS, Value.TWO)) == 0);
+        assertFalse(deck.getFirst().compareTo(new Card(Color.CLUBS, Value.TWO)) != 0);
     }
 
     public void testSort1() throws Exception {
