@@ -1,22 +1,20 @@
-package test;
-
 import junit.framework.TestCase;
-import java.*;
 
 public class DeckTest extends TestCase {
-
     Deck deck = null;
 
     public void setUp() throws Exception {
-        super.setUp();
+        deck = new Deck();
     }
 
     public void tearDown() throws Exception {
-
+        deck = null;
     }
 
     public void testSort() throws Exception {
+    }
 
+    public void testSort1() throws Exception {
     }
 
     public void testShuffle() throws Exception {
