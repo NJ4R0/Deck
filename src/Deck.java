@@ -37,7 +37,6 @@ class Deck{
         this.cards=cards;
     }
     Deck(int n){
-        assert n<=52&&n%4==0;
         cards = new ArrayList<>();
         int k = 14;
         for(int i=0; 4*i<n; i++){
@@ -50,6 +49,8 @@ class Deck{
         }
         shuffle();
     }
+
+
     Deck(){
         this(52);
     }
