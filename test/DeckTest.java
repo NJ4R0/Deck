@@ -39,10 +39,12 @@ public class DeckTest extends TestCase {
 
     public void testShuffle() throws Exception {
         Deck deck1 = new Deck();
+        Card c = deck1.getFirst();
         Deck deck2 = new Deck();
+        deck2.setCards(new ArrayList<>(deck1.getCards()));
         deck1.shuffle();
         deck2.shuffle();
-        assertNotSame(deck1, deck2);
+        assertNotSame(deck1.getCards().indexOf(c),deck2.getCards().indexOf(c));
     }
 
     public void testGetFirst() throws Exception {

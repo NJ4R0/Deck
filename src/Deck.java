@@ -1,9 +1,9 @@
 import java.util.ArrayList;
+import java.util.Random;
 
-public class Deck{
-
+class Deck{
     private ArrayList<Card> cards;
-    public static void sort(ArrayList<Card> cards){
+    static void sort(ArrayList<Card> cards){
         for(int i=cards.size()-1;i>=1;i--){
             for(int j=0; j<i; j++){
                 if(cards.get(j).compareTo(cards.get(j+1))>0){
@@ -14,20 +14,29 @@ public class Deck{
             }
         }
     }
-    public void sort(){
+    void sort(){
         Deck.sort(cards);
     }
-    public void shuffle(){
-        // get random 2 and swap 10k times
+    void shuffle(){
+        Random random = new Random();
+        for (int i=0; i<200; i++){
+            int j=random.nextInt(this.getCards().size());
+            int k=random.nextInt(this.getCards().size());
+            Card c=this.getCards().get(j);
+            this.getCards().set(j,this.getCards().get(k));
+            this.getCards().set(k,c);
+        }
     }
-    public Card getFirst(){
+    Card getFirst(){
         return cards.get(0);
     }
-    public ArrayList<Card> getCards() {
+    ArrayList<Card> getCards() {
         return cards;
     }
-
-    public Deck(int n){
+    void setCards(ArrayList<Card> cards){
+        this.cards=cards;
+    }
+    Deck(int n){
         assert n<=52&&n%4==0;
         cards = new ArrayList<>();
         int k = 14;
@@ -41,7 +50,7 @@ public class Deck{
         }
         shuffle();
     }
-    public Deck(){
+    Deck(){
         this(52);
     }
 
