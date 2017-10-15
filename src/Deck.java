@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Deck{
 
     private ArrayList<Card> cards;
-    public void sort(){
+    public static void sort(ArrayList<Card> cards){
         for(int i=cards.size()-1;i>=1;i--){
             for(int j=0; j<i; j++){
                 if(cards.get(j).compareTo(cards.get(j+1))>0){
@@ -13,6 +13,9 @@ public class Deck{
                 }
             }
         }
+    }
+    public void sort(){
+        Deck.sort(cards);
     }
     public void shuffle(){
         // get random 2 and swap 10k times
@@ -37,6 +40,9 @@ public class Deck{
             k--;
         }
         shuffle();
+    }
+    public Deck(){
+        this(52);
     }
 
 }
