@@ -51,6 +51,12 @@ public class DeckTest extends TestCase {
         assertEquals(deck.getCards().get(0), deck.getFirst());
     }
 
+    public void testGetFirstSize() {
+        int oldSize = deck.getCards().size();
+        deck.getFirst();
+        assertTrue(oldSize == deck.getCards().size());
+    }
+
     public void testCreation() {
         deck = new Deck(32);
         deck.sort();
