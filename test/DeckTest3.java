@@ -32,7 +32,7 @@ public class DeckTest3 {
 
     }
 
-    @Test(timeout = 500)
+    @Test(timeout = 400)
     public void testSort1() {
         deck.sort();
         assertTrue(deck.getFirst().compareTo(new Card(Color.CLUBS, Value.TWO)) == 0);
