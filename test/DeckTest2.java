@@ -1,9 +1,5 @@
 import junit.framework.TestCase;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
-
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class DeckTest2 extends TestCase {
@@ -29,7 +25,7 @@ public class DeckTest2 extends TestCase {
         deck = null;
     }
 
-    @Test(timeout = 5)
+    @Test(timeout = 0)
     public void testSort1() {
         deck.sort();
         assertTrue(deck.getFirst().compareTo(new Card(Color.CLUBS, Value.TWO)) == 0);
